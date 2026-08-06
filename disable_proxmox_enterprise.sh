@@ -1,3 +1,5 @@
+#!/bin/bash
+
 CODENAME=$(grep VERSION_CODENAME /etc/os-release | tr -d '"' | cut -d= -f2)
 
 echo 'Enabled: false' >> /etc/apt/sources.list.d/pve-enterprise.sources
