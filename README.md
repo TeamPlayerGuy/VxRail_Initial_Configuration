@@ -2,7 +2,7 @@
 
 ## Getting ProxMox up and running
 
-iDrac accepts DHCP by default, access via https://<IP>, root:calvin
+iDrac accepts DHCP by default, access via https://<iDrac_IP>, root:calvin
 
 Within HTTP iDrac you'll...
 
