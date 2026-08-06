@@ -21,7 +21,7 @@ ProxMox requires a FQDN, either use your domain, or make one up <Host>.<Domain>
 
 4. Create ZFS Pools if desired  
 The Virtual Console should now plop you into ProxMox  
-zpool create -o ashift=12 <pool-name> <mirror|raidz2|raidz1>  
+zpool create -o ashift=12 <pool_name> <mirror|raidz2|raidz1>  
 
 ## Power Reduction
 
