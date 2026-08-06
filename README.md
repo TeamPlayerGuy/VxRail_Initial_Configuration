@@ -6,7 +6,7 @@ iDrac accepts DHCP by default, access via https://<IP>, root:calvin
 
 Within HTTP iDrac you'll...
 
-1. Create the boot raid volume
+1. Create the boot raid volume \n
 Storage > Physical Disks > Create Virtual Disk (Select the two BOSS Controller disks) and create a RAID1
 These disks reside inside the VxRail, directly attached to the motherboard, meant only for Hypervisor installation
 Monitor via Maintenance > Job Queue
