@@ -26,3 +26,6 @@ racadm jobqueue view
 ### Ensure changes took effect
 racadm get BIOS.SysProfileSettings
 racadm get BIOS.IntegratedDevices
+
+### Ensure lowest c-state of 1200mhz per core
+watch -n1 "grep MHz /proc/cpuinfo"
