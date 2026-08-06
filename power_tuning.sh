@@ -12,11 +12,9 @@
 # NOTE: This forces a power cycle of the host to apply the BIOS
 # changes. Don't run this against a host with anything running on it.
 
-### Allows OS to control c-state
-racadm set BIOS.SysProfileSettings.SysProfile PerfWattOptimizedOs
-
-### Further optimizes power draw
-racadm set BIOS.SysProfileSettings.WorkloadProfile VtPerWattOptimizedProfile
+### Allows OS to control c-state, DAPC cannot engage lowest c-state
+### The OS (ProxMox) will have more granular control of CPU frequencies
+racadm set BIOS.SysProfileSettings.SysProfile PerfPerWattOptimizedOs
 
 ### Disables annoying SD card warnings, we use BOSS
 racadm set BIOS.IntegratedDevices.InternalSDCardPort Off
