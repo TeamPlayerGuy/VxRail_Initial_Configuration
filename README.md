@@ -30,3 +30,8 @@ Within HTTP iDrac you'll...
    After rebooting you should see the changes reflected in HTTP iDrac
    Or by running racadm get BIOS.SysProfileSettings AND racadm get BIOS.IntegratedDevices
    If the changes didn't take, view the Job Queue for related errors
+
+## Disable ProxMox Enterprise License
+
+1. Run disable_proxmox_enterprise.sh
+   Validate within ProxMox GUI > Node > Repositories
