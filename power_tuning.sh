@@ -24,6 +24,9 @@ racadm set BIOS.IntegratedDevices.InternalSDCardPort Off
 ### Queue the above changes in job queue and reboot VxRail
 racadm jobqueue create BIOS.Setup.1-1 -r pwrcycle
 
+### View progress of submitted job
+racadm jobqueue view
+
 ### Ensure changes took effect
 racadm get BIOS.SysProfileSettings
 racadm get BIOS.IntegratedDevices
