@@ -26,7 +26,7 @@ Within HTTP iDrac you'll...
    Redundancy Policy => Not Redundant
    Hot Spare => Enabled
    One PSU Running at 80% load is more efficient than 2 running at 40%
-2. Run power_tuning.sh
+2. SSH root@<iDrac_IP> Run power_tuning.sh
    After rebooting you should see the changes reflected in HTTP iDrac
    Or by running racadm get BIOS.SysProfileSettings AND racadm get BIOS.IntegratedDevices
    If the changes didn't take, view the Job Queue for related errors
