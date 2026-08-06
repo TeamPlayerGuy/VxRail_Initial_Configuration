@@ -1,5 +1,3 @@
-# idrac-power-tuning.sh
-#
 # Applies the BIOS power/thermal settings used to bring the P570F idle from 482W -> 254W:
 #   - System Profile:   Performance Per Watt (OS)
 #   - Workload Profile: Virtualization Optimized Performance Per Watt
