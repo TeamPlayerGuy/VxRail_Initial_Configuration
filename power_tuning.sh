@@ -10,6 +10,12 @@
 # NOTE: This forces a power cycle of the host to apply the BIOS
 # changes. Don't run this against a host with anything running on it.
 
+### We want to disable one PSU entirely, 80% load on one is better that 40% load on two
+### Be sure to remove the unused PSU entirely, or it will alert for missing AC connection
+racadm set System.ServerPwr.PSRedPolicy 0
+racadm set System.ServerPwr.PSRapidOn 0
+racadm set System.ServerPwr.RapidOnPrimaryPSU 1
+
 ### Allows OS to control c-state, DAPC cannot engage lowest c-state
 ### The OS (ProxMox) will have more granular control of CPU frequencies
 racadm set BIOS.SysProfileSettings.SysProfile PerfPerWattOptimizedOs
