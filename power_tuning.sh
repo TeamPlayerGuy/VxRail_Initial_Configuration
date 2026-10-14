@@ -15,7 +15,7 @@
 racadm set BIOS.SysProfileSettings.SysProfile PerfPerWattOptimizedOs
 
 ### Disables annoying SD card warnings, we use BOSS
-racadm set BIOS.IntegratedDevices.InternalSDCardPort Off
+racadm set BIOS.IntegratedDevices.InternalSDCard Off
 
 ### Queue the above changes in job queue and reboot VxRail
 racadm jobqueue create BIOS.Setup.1-1 -r pwrcycle
