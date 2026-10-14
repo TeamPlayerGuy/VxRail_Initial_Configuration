@@ -5,11 +5,7 @@ When first logging in you'll need to create a unique password to replace calvin
 
 ## Power Reduction
 
-1. HTTP iDrac > Configuration > Power Management > Power Configuration  
-Redundancy Policy => Not Redundant  
-Hot Spare => Enabled  
-One PSU Running at 80% load is more efficient than 2 running at 40%  
-2. SSH iDrac >> Run lines one by one within power_tuning.sh  
+SSH iDrac >> Run lines one by one within power_tuning.sh  
 After rebooting you should see the changes reflected in HTTP iDrac or via racadm get  
 If the changes didn't take, view the Job Queue for related errors  
 
