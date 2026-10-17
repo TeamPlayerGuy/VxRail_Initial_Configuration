@@ -43,7 +43,7 @@ iface bond0 inet manual
 
 auto vmbr0
 iface vmbr0 inet static
-        address 192.168.40.21/24
+        address 192.168.40.<DEVICE>/24
         gateway 192.168.40.1
         bridge-ports bond0
         bridge-stp off
@@ -63,7 +63,7 @@ iface nic4 inet manual
 ### It's important that the local IP is a FQDN
 
 127.0.0.1 localhost.localdomain localhost
-192.168.40.21 proxrail001.cluster proxrail001
+192.168.40.<DEVICE> proxrail00<DEVICE>.cluster proxrail00<DEVICE>
 
 ####################################################################
 ### Running the below commands to ensure things are good
