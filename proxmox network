@@ -40,3 +40,14 @@ iface nic4 inet manual
 
 127.0.0.1 localhost.localdomain localhost
 192.168.40.21 proxrail001.cluster proxrail001
+
+####################################################################
+
+### Running the below commands to ensure things are good
+
+ifup -a --syntax-check
+ifreload -a
+cat /proc/net/bonding/bond0
+ip -br link
+ping -c3 192.168.40.1
+systemctl restart pveproxy
