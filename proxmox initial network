@@ -1,4 +1,26 @@
 ####################################################################
+### Re-Link Real NIC ###
+####################################################################
+### If NIC numbers are goofy, you can regenerate link files
+### Maybe 2 is missing NIC0, 1, 3, 4
+### Maybe one node starts with NIC0 and another starts with NIC1
+### This is a result of USB NIC IP Address being enabled (iDrac Settings)
+
+mkdir link-backup
+mv /usr/local/lib/systemd/network/*.link link-backup
+pve-network-interface-pinning generate
+reboot
+
+####################################################################
+### Determine which NIC are Ether VS iDrac ###
+####################################################################
+### Real NIC will have i40e for SFP 10GB
+
+for n in $(ls /sys/class/net | grep -vE 'lo|vmbr|bond'); do
+  printf "%-12s %s\n" "$n" "$(ethtool -i $n | awk '/^driver/{print $2}')"
+done
+
+####################################################################
 ### /etc/network/interfaces ###
 ####################################################################
 ### Defining each nic as manual, creating the bond, associating with vmbr0
