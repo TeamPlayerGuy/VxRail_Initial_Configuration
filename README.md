@@ -19,11 +19,7 @@ Monitor via HTTP iDrac > Maintenance > Job Queue
 2. Install ProxMox  
 HTTP iDrac > Virtual Console > Virtual Media > Browse to ProxMox ISO and select Boot Once  
 Be sure to assign an IP that is outside of your network's DHCP reservation pool  
-ProxMox requires a FQDN, either use your domain, or make one up <Host>.<Domain>  
-
-3. Create ZFS Pools if desired  
-The HTTP iDrac Virtual Console should now plop you into ProxMox  
-zpool create -o ashift=12 <pool_name> <mirror|raidz2|raidz1>  
+ProxMox requires a FQDN, either use your domain, or make one up <Host>.<Domain>   
 
 ## Disable ProxMox Enterprise License
 
@@ -32,6 +28,12 @@ Validate within ProxMox GUI > Node > Repositories
 
 ## Networking
 
-1. You'll want to align on VLAN assigment
-2. You'll want to put all management IP onto a single VLAN
+1. You'll want to align on VLAN assigment  
+2. You'll want to put all management IP onto a single VLAN  
 3. Configure ProxMox mgmt through iDrac, then use HHTP GUI
+
+NOTE: See proxmox_initial_networking
+
+## Storage
+
+1. Configure ZFS Pool for NVME, local image storage  
