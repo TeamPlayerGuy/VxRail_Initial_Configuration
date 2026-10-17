@@ -1,0 +1,42 @@
+### /etc/network/interfaces
+# Defining each nic as manual, creating the bond, associating with vmbr0
+
+auto lo
+iface lo inet loopback
+
+auto nic0
+iface nic0 inet manual
+
+auto nic1
+iface nic1 inet manual
+
+auto bond0
+iface bond0 inet manual
+        bond-slaves nic0 nic1
+        bond-mode active-backup
+        bond-miimon 100
+        bond-primary nic0
+
+auto vmbr0
+iface vmbr0 inet static
+        address 192.168.40.21/24
+        gateway 192.168.40.1
+        bridge-ports bond0
+        bridge-stp off
+        bridge-fd 0
+        bridge-vlan-aware yes
+        bridge-vids 2-4094
+
+iface nic2 inet manual
+
+iface nic3 inet manual
+
+iface nic4 inet manual
+
+####################################################################
+
+### /etc/hosts ###
+# It's important that the local IP is a FQDN
+
+127.0.0.1 localhost.localdomain localhost
+192.168.40.21 proxrail001.cluster proxrail001
