@@ -29,3 +29,9 @@ zpool create -o ashift=12 <pool_name> <mirror|raidz2|raidz1>
 
 1. SSH root@</ProxMox_IP> >> Run disable_proxmox_enterprise.sh  
 Validate within ProxMox GUI > Node > Repositories  
+
+## Networking
+
+1. You'll want to align on VLAN assigment
+2. You'll want to put all management IP onto a single VLAN
+3. Configure ProxMox mgmt through iDrac, then use HHTP GUI
